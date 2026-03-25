@@ -11,115 +11,136 @@
             --accent: #e67e22;
             --light: #ecf0f1;
             --dark: #34495e;
+            --whatsapp: #25d366;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--dark); line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--dark); line-height: 1.6; scroll-behavior: smooth; }
         header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
         .logo span { color: var(--accent); }
         
         /* Hero Section */
-        .hero { background: linear-gradient(135deg, var(--primary), var(--dark)); color: white; padding: 100px 10%; display: flex; align-items: center; flex-wrap: wrap; }
-        .hero-text { flex: 1; min-width: 300px; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--dark)); color: white; padding: 80px 10%; display: flex; align-items: center; flex-wrap: wrap; }
+        .hero-text { flex: 1; min-width: 300px; padding-right: 20px; }
         .hero-img { flex: 1; min-width: 300px; text-align: center; }
-        .hero-img img { width: 80%; max-width: 300px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 1rem; }
-        .btn-play { background: #000; color: white; }
+        .hero-img img { width: 80%; max-width: 280px; border-radius: 30px; border: 8px solid rgba(255,255,255,0.1); shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        
+        h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; }
+        .btn { display: inline-block; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 15px; text-align: center; }
+        .btn-play { background: #000; color: white; border: 1px solid #555; }
         .btn-kit { background: var(--accent); color: white; margin-left: 10px; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        /* WhatsApp Flotante */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 2000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 
         /* Sections */
         section { padding: 80px 10%; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { padding: 30px; border-radius: 15px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
+        .card { padding: 30px; border-radius: 15px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
         .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
         
-        /* Product Section */
-        .product-box { background: var(--light); display: flex; align-items: center; flex-wrap: wrap; text-align: left; border-radius: 20px; overflow: hidden; }
+        /* Product Box */
+        .product-box { background: #fff; display: flex; align-items: center; flex-wrap: wrap; text-align: left; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.1); border: 1px solid #eee; }
         .product-info { padding: 50px; flex: 1; }
-        .product-img { flex: 1; background: url('https://via.placeholder.com/600x400?text=Kit+String+Art') no-repeat center; background-size: cover; min-height: 400px; }
+        .product-img { flex: 1; background: url('https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') no-repeat center; background-size: cover; min-height: 400px; }
 
-        footer { background: var(--primary); color: white; padding: 40px 10%; text-align: center; }
-        .social a { color: white; margin: 0 15px; font-size: 1.5rem; }
+        footer { background: var(--primary); color: white; padding: 60px 10%; text-align: center; }
+        .social-links { margin: 25px 0; }
+        .social-links a { color: white; margin: 0 15px; font-size: 1.8rem; text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
         
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .btn-kit { margin-left: 0; margin-top: 10px; width: 100%; text-align: center; }
-            .btn-play { width: 100%; text-align: center; }
+            h1 { font-size: 2.2rem; }
+            .hero { padding: 40px 5%; text-align: center; }
+            .hero-text { padding-right: 0; }
+            .btn-kit { margin-left: 0; width: 100%; box-sizing: border-box; }
+            .btn-play { width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/593855800941?text=Hola!%20Me%20interesa%20comprar%20un%20Kit%20de%20String%20Art" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header>
-        <div class="logo">MHELION<span>ART</span></div>
+        <a href="#" class="logo">MHELION<span>ART</span></a>
         <nav>
-            <a href="#app" style="text-decoration:none; color:var(--dark); margin-right:20px;">App</a>
-            <a href="#kit" style="text-decoration:none; color:var(--dark);">Kits</a>
+            <a href="#app" style="text-decoration:none; color:var(--dark); margin-right:20px; font-weight:bold;">App</a>
+            <a href="#kit" style="text-decoration:none; color:var(--dark); font-weight:bold;">Kits</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-text">
             <h1>Crea Arte con Hilos desde tu Celular</h1>
-            <p>Convierte cualquier fotografía en un patrón de String Art espectacular. Nuestra app genera los pasos y nuestros kits te dan las herramientas.</p>
+            <p>Con <b>Mhelion Art</b>, convierte tus fotos favoritas en impresionantes obras de String Art. Genera patrones automáticos y dale vida a tus paredes.</p>
             <a href="https://play.google.com/store/apps/details?id=com.mhelionart.app" class="btn btn-play" target="_blank">
-                <i class="fab fa-google-play"></i> Descargar App
+                <i class="fab fa-google-play"></i> Descargar en Play Store
             </a>
             <a href="#kit" class="btn btn-kit">Ver Kits de Venta</a>
         </div>
         <div class="hero-img">
-            <!-- Reemplaza esta URL con una captura de tu app -->
-            <img src="https://via.placeholder.com/300x600?text=App+Screenshot" alt="App String Art">
+            <!-- Imagen de celular simulada -->
+            <img src="https://via.placeholder.com/300x600?text=Mhelion+Art+App" alt="Mhelion Art App">
         </div>
     </section>
 
     <section id="app">
-        <h2>¿Qué puedes hacer con la App?</h2>
+        <h2>¿Cómo funciona la App?</h2>
         <div class="grid">
             <div class="card">
-                <i class="fas fa-magic"></i>
-                <h3>Generador Automático</h3>
-                <p>Sube tu foto y obtén el patrón de líneas en segundos.</p>
+                <i class="fas fa-camera"></i>
+                <h3>1. Sube tu foto</h3>
+                <p>Elige cualquier retrato o imagen desde tu galería.</p>
             </div>
             <div class="card">
-                <i class="fas fa-list-ol"></i>
-                <h3>Guía Paso a Paso</h3>
-                <p>Instrucciones detalladas para que no te pierdas en ningún hilo.</p>
+                <i class="fas fa-cogs"></i>
+                <h3>2. Genera el patrón</h3>
+                <p>Nuestra tecnología calcula el orden exacto de los hilos.</p>
             </div>
             <div class="card">
-                <i class="fas fa-palette"></i>
-                <h3>Personalización</h3>
-                <p>Ajusta el número de hilos, contraste y forma del bastidor.</p>
+                <i class="fas fa-hammer"></i>
+                <h3>3. Manos a la obra</h3>
+                <p>Sigue la guía paso a paso para crear tu cuadro físico.</p>
             </div>
         </div>
     </section>
 
-    <section id="kit" style="background:#f9f9f9;">
+    <section id="kit" style="background:#fcfcfc;">
         <div class="product-box">
             <div class="product-info">
-                <h2>Kit Premium de String Art</h2>
-                <p>Todo lo que necesitas para materializar tu diseño digital:</p>
+                <span style="color:var(--accent); font-weight:bold; text-transform:uppercase;">Producto Disponible</span>
+                <h2>Kit Premium String Art</h2>
+                <p>Incluye todo lo necesario para que no tengas que buscar nada por separado:</p>
                 <ul style="list-style: none; padding: 0;">
-                    <li><i class="fas fa-check" style="color:green"></i> Base de madera de alta calidad.</li>
-                    <li><i class="fas fa-check" style="color:green"></i> Clavos galvanizados precisos.</li>
-                    <li><i class="fas fa-check" style="color:green"></i> Hilo especial de alta resistencia.</li>
-                    <li><i class="fas fa-check" style="color:green"></i> Soporte para celular incluido.</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Tablero de madera curada y perforada.</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Clavos de acero de alta precisión.</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Hilo artístico de alta resistencia.</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Guía exclusiva para usar con la app.</li>
                 </ul>
-                <!-- PON AQUÍ TU LINK DE VENTA -->
-                <a href="#" class="btn btn-kit" style="margin-left:0; background:var(--primary)">Comprar Mi Kit Ahora</a>
+                <a href="https://wa.me/593855800941?text=Hola!%20Deseo%20comprar%20el%20Kit%20de%20String%20Art" class="btn btn-kit" style="margin-left:0; padding: 20px 40px;">
+                    PEDIR POR WHATSAPP
+                </a>
             </div>
             <div class="product-img"></div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Mhelion Art. Todos los derechos reservados.</p>
-        <div class="social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="https://play.google.com/store/apps/details?id=com.mhelionart.app"><i class="fab fa-google-play"></i></a>
+        <div class="logo" style="color:white; font-size: 2rem;">MHELION<span>ART</span></div>
+        <p>Síguenos en nuestras redes sociales para tutoriales y nuevos diseños.</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/mhelion.art/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61552727421114" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/593855800941" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.mhelionart.app" target="_blank"><i class="fab fa-google-play"></i></a>
         </div>
+        
+        <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 40px;">&copy; 2024 Mhelion Art. Hecho con pasión por el arte.</p>
     </footer>
 
 </body>
