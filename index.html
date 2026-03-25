@@ -104,6 +104,78 @@
             border: 0;
         }
         
+        /* Estilo para la nueva sección central con video destacado */
+        .showcase-section {
+            background: linear-gradient(120deg, #fef9f0, #fff5e8);
+            padding: 80px 10%;
+            text-align: center;
+        }
+        .showcase-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+        }
+        .showcase-video {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .showcase-text {
+            flex: 1;
+            text-align: left;
+            min-width: 260px;
+        }
+        .showcase-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .showcase-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        .video-medium-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 320px;
+            padding-bottom: 177.77%;
+            background: #000;
+            border-radius: 28px;
+            border: 6px solid rgba(230,126,34,0.3);
+            overflow: hidden;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+        .video-medium-wrapper:hover {
+            transform: scale(1.02);
+        }
+        .video-medium-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .badge-creative {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
         h1 { 
             font-size: 3rem; 
             margin-bottom: 1rem; 
@@ -247,7 +319,6 @@
             transform: scale(1.1);
         }
         
-        /* Video caption sutil */
         .video-caption {
             margin-top: 12px;
             font-size: 0.85rem;
@@ -269,16 +340,23 @@
             .product-info { padding: 30px; text-align: center; }
             .product-info ul li { justify-content: center; }
             .video-demo-wrapper { width: 70%; max-width: 260px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-img .video-demo-wrapper { width: 85%; }
+            .showcase-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .showcase-text {
+                text-align: center;
+            }
+            .video-medium-wrapper {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Botón de WhatsApp flotante -->
     <a href="https://wa.me/593855800941?text=Hola!%20Me%20interesa%20comprar%20un%20Kit%20de%20String%20Art" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -304,7 +382,6 @@
         </div>
         <div class="hero-img">
             <div class="video-demo-wrapper">
-                <!-- Video de YouTube Shorts solicitado: https://youtube.com/shorts/RRI1O4xWln4 -->
                 <iframe 
                     src="https://www.youtube.com/embed/RRI1O4xWln4?modestbranding=1&rel=0&showinfo=0&controls=1&color=white" 
                     title="Mhelion Art - Demostración de String Art" 
@@ -339,6 +416,32 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN EN EL MEDIO: VIDEO ADICIONAL DE "MUJER CON PERLAS" -->
+    <div class="showcase-section">
+        <div class="showcase-container">
+            <div class="showcase-video">
+                <div class="video-medium-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/EL91_Wok2IQ?modestbranding=1&rel=0&showinfo=0&controls=1" 
+                        title="Mujer con perlas - String Art by Mhelion Art" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <span class="badge-creative"><i class="fas fa-play-circle"></i> Proceso creativo</span>
+            </div>
+            <div class="showcase-text">
+                <h2>✨ La Mujer con Perlas ✨</h2>
+                <p>Inspirado en la elegancia atemporal, nuestro arte con hilos da vida a detalles únicos. Observa cómo la combinación de precisión y creatividad transforma un diseño clásico en una obra de textura y color.</p>
+                <p><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Paso a paso:</strong> Desde el patrón generado por la app hasta el bordado final.</p>
+                <p><i class="fas fa-magic" style="color: var(--accent);"></i> Cada hilo sigue una secuencia exacta, logrando efectos de luz y volumen increíbles.</p>
+                <a href="https://wa.me/593855800941?text=Me%20encantó%20el%20video%20de%20la%20Mujer%20con%20Perlas!%20Quiero%20mi%20kit" class="btn btn-kit" style="margin-top: 20px; display: inline-block;">Inspírate y crea el tuyo</a>
+            </div>
+        </div>
+    </div>
+
     <section id="kit" style="background:#fcfcfc;">
         <div class="product-box">
             <div class="product-info">
@@ -359,26 +462,16 @@
         </div>
     </section>
 
-    <!-- Sección adicional testimonio visual (opcional, pero refuerza el video) -->
     <section style="background: linear-gradient(120deg, #f8f9fa, #ffffff); padding: 60px 10%;">
         <div style="max-width: 800px; margin: 0 auto;">
             <h2 style="color: var(--primary);">🎬 Inspiración en acción</h2>
             <p style="font-size: 1.2rem; margin-bottom: 20px;">Descubre cómo el arte con hilos cobra vida con Mhelion Art. Nuestra app convierte cualquier diseño en un mapa de hilos preciso.</p>
-            <div style="background: #fff; border-radius: 32px; padding: 10px; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 24px; overflow: hidden;">
-                    <!-- Reproducimos el mismo video pero en formato horizontal para mostrar más contexto en escritorio (opcional, pero queda bien)
-                         Decidimos mantener la esencia, pero no saturar. Para no repetir, mostramos un mini texto explicativo y dejamos el hero como protagonista.
-                         Agregamos otro pequeño embed? Mejor resaltar el valor de la comunidad. 
-                         En lugar de otro video pesado, mostramos imagen ilustrativa de proceso pero evitamos duplicar el mismo recurso.
-                         Para mantener coherencia, muestro una cita con foto ilustrativa. -->
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                <div style="background: var(--accent); color: white; border-radius: 40px; padding: 8px 20px; font-weight: bold;">
+                    <i class="fas fa-star"></i> +500 creaciones realizadas
                 </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
-                    <div style="background: var(--accent); color: white; border-radius: 40px; padding: 8px 20px; font-weight: bold;">
-                        <i class="fas fa-star"></i> +500 creaciones realizadas
-                    </div>
-                    <div style="background: var(--primary); color: white; border-radius: 40px; padding: 8px 20px; font-weight: bold;">
-                        <i class="fas fa-palette"></i> Arte sostenible
-                    </div>
+                <div style="background: var(--primary); color: white; border-radius: 40px; padding: 8px 20px; font-weight: bold;">
+                    <i class="fas fa-palette"></i> Arte sostenible
                 </div>
             </div>
         </div>
@@ -399,9 +492,7 @@
         <p style="opacity: 0.5; font-size: 0.8rem;">📍 Ecuador · Envíos a todo el país | Transforma tu creatividad</p>
     </footer>
 
-    <!-- Pequeño script para mejorar la experiencia mobile en el anclaje -->
     <script>
-        // Smooth scroll para los enlaces internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
@@ -416,11 +507,6 @@
                 }
             });
         });
-        // pequeño ajuste para que el video no se superponga al header fijo
-        const heroVideo = document.querySelector('.video-demo-wrapper');
-        if(heroVideo) {
-            // nada extra
-        }
     </script>
 </body>
 </html>
