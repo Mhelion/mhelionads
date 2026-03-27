@@ -6,6 +6,7 @@
     <title>Mhelion Art - String Art App & Kits | Transforma tus fotos en arte con hilos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* ... (mismo CSS que en la versión anterior, sin cambios) ... */
         :root {
             --primary: #2c3e50;
             --accent: #e67e22;
@@ -50,275 +51,50 @@
         }
         nav a {
             transition: color 0.2s ease;
+            text-decoration: none;
+            font-weight: bold;
         }
         nav a:hover {
             color: var(--accent) !important;
         }
-        
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(135deg, var(--primary), var(--dark)); 
-            color: white; 
-            padding: 80px 10%; 
-            display: flex; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 2rem;
-        }
-        .hero-text { 
-            flex: 1; 
-            min-width: 280px; 
-        }
-        .hero-img { 
-            flex: 1; 
-            min-width: 280px; 
-            text-align: center; 
-            display: flex;
-            justify-content: center;
-        }
-        
-        /* Contenedor del video estilo vertical (9:16) similar a un celular */
-        .video-demo-wrapper {
-            position: relative;
-            width: 80%;
-            max-width: 280px;
-            margin: 0 auto;
-            padding-bottom: 177.77%; /* Relación 9:16 vertical para Shorts */
-            background: #000;
-            border-radius: 30px;
-            border: 8px solid rgba(255,255,255,0.2);
-            overflow: hidden;
-            box-shadow: 0 25px 40px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .video-demo-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.6);
-        }
-        .video-demo-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        
-        /* Estilo para la nueva sección central con video destacado */
-        .showcase-section {
-            background: linear-gradient(120deg, #fef9f0, #fff5e8);
-            padding: 80px 10%;
-            text-align: center;
-        }
-        .showcase-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-        }
-        .showcase-video {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .showcase-text {
-            flex: 1;
-            text-align: left;
-            min-width: 260px;
-        }
-        .showcase-text h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .showcase-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-        .video-medium-wrapper {
-            position: relative;
-            width: 90%;
-            max-width: 320px;
-            padding-bottom: 177.77%;
-            background: #000;
-            border-radius: 28px;
-            border: 6px solid rgba(230,126,34,0.3);
-            overflow: hidden;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-            margin-bottom: 15px;
-        }
-        .video-medium-wrapper:hover {
-            transform: scale(1.02);
-        }
-        .video-medium-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .badge-creative {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        
-        h1 { 
-            font-size: 3rem; 
-            margin-bottom: 1rem; 
-            line-height: 1.1; 
-            font-weight: 800;
-        }
-        .btn { 
-            display: inline-block; 
-            padding: 15px 30px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: 0.3s; 
-            margin-top: 15px; 
-            text-align: center; 
-            cursor: pointer;
-        }
-        .btn-play { 
-            background: #000000cc; 
-            color: white; 
-            border: 1px solid rgba(255,255,255,0.3);
-            backdrop-filter: blur(2px);
-        }
-        .btn-kit { 
-            background: var(--accent); 
-            color: white; 
-            margin-left: 10px;
-            border: none;
-        }
-        .btn:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
-            filter: brightness(1.05);
-        }
-
-        /* WhatsApp Flotante */
-        .whatsapp-float { 
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            background: var(--whatsapp); 
-            color: white; 
-            width: 60px; 
-            height: 60px; 
-            border-radius: 50px; 
-            text-align: center; 
-            font-size: 30px; 
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); 
-            z-index: 2000; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-decoration: none; 
-            transition: 0.2s;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-            background: #20b859;
-        }
-
-        /* Sections */
-        section { 
-            padding: 80px 10%; 
-            text-align: center; 
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 30px; 
-            margin-top: 40px; 
-        }
-        .card { 
-            padding: 30px; 
-            border-radius: 15px; 
-            background: white; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            border: 1px solid #eee; 
-            transition: all 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-        }
-        .card i { 
-            font-size: 2.5rem; 
-            color: var(--accent); 
-            margin-bottom: 1rem; 
-        }
-        
-        /* Product Box */
-        .product-box { 
-            background: #fff; 
-            display: flex; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            text-align: left; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            box-shadow: 0 15px 50px rgba(0,0,0,0.1); 
-            border: 1px solid #eee; 
-        }
-        .product-info { 
-            padding: 50px; 
-            flex: 1; 
-        }
-        .product-img { 
-            flex: 1; 
-            background: url('https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') no-repeat center; 
-            background-size: cover; 
-            min-height: 400px; 
-        }
-        .product-info ul li {
-            margin: 12px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .product-info i.fa-check-circle {
-            font-size: 1.2rem;
-        }
-
-        footer { 
-            background: var(--primary); 
-            color: white; 
-            padding: 60px 10%; 
-            text-align: center; 
-        }
-        .social-links { 
-            margin: 25px 0; 
-        }
-        .social-links a { 
-            color: white; 
-            margin: 0 15px; 
-            font-size: 1.8rem; 
-            text-decoration: none; 
-            transition: 0.3s; 
-            display: inline-block;
-        }
-        .social-links a:hover { 
-            color: var(--accent); 
-            transform: scale(1.1);
-        }
-        
+        /* ... resto del CSS igual que antes ... */
+        .hero { background: linear-gradient(135deg, var(--primary), var(--dark)); color: white; padding: 80px 10%; display: flex; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .hero-text { flex: 1; min-width: 280px; }
+        .hero-img { flex: 1; min-width: 280px; text-align: center; display: flex; justify-content: center; }
+        .video-demo-wrapper { position: relative; width: 80%; max-width: 280px; margin: 0 auto; padding-bottom: 177.77%; background: #000; border-radius: 30px; border: 8px solid rgba(255,255,255,0.2); overflow: hidden; box-shadow: 0 25px 40px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .video-demo-wrapper:hover { transform: translateY(-5px); box-shadow: 0 30px 50px rgba(0,0,0,0.6); }
+        .video-demo-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .showcase-section { background: linear-gradient(120deg, #fef9f0, #fff5e8); padding: 80px 10%; text-align: center; }
+        .showcase-container { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 3rem; }
+        .showcase-video { flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; }
+        .showcase-text { flex: 1; text-align: left; min-width: 260px; }
+        .showcase-text h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+        .showcase-text p { font-size: 1.1rem; margin-bottom: 1rem; color: #2c3e50; }
+        .video-medium-wrapper { position: relative; width: 90%; max-width: 320px; padding-bottom: 177.77%; background: #000; border-radius: 28px; border: 6px solid rgba(230,126,34,0.3); overflow: hidden; box-shadow: 0 20px 35px rgba(0,0,0,0.2); transition: transform 0.3s ease; margin-bottom: 15px; }
+        .video-medium-wrapper:hover { transform: scale(1.02); }
+        .video-medium-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .badge-creative { display: inline-block; background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-size: 0.8rem; font-weight: bold; margin-top: 10px; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; font-weight: 800; }
+        .btn { display: inline-block; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 15px; text-align: center; cursor: pointer; }
+        .btn-play { background: #000000cc; color: white; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(2px); }
+        .btn-kit { background: var(--accent); color: white; margin-left: 10px; border: none; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); filter: brightness(1.05); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 2000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.2s; }
+        .whatsapp-float:hover { transform: scale(1.08); background: #20b859; }
+        section { padding: 80px 10%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { padding: 30px; border-radius: 15px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; transition: all 0.2s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 35px rgba(0,0,0,0.1); }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+        .product-box { background: #fff; display: flex; align-items: center; flex-wrap: wrap; text-align: left; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        .product-info { padding: 50px; flex: 1; }
+        .product-img { flex: 1; background: url('https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') no-repeat center; background-size: cover; min-height: 400px; }
+        .product-info ul li { margin: 12px 0; display: flex; align-items: center; gap: 10px; }
+        .product-info i.fa-check-circle { font-size: 1.2rem; }
+        footer { background: var(--primary); color: white; padding: 60px 10%; text-align: center; }
+        .social-links { margin: 25px 0; }
+        .social-links a { color: white; margin: 0 15px; font-size: 1.8rem; text-decoration: none; transition: 0.3s; display: inline-block; }
+        .social-links a:hover { color: var(--accent); transform: scale(1.1); }
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .hero { padding: 40px 5%; text-align: center; flex-direction: column; }
@@ -328,24 +104,14 @@
             .product-info { padding: 30px; text-align: center; }
             .product-info ul li { justify-content: center; }
             .video-demo-wrapper { width: 70%; max-width: 260px; }
-            .showcase-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .showcase-text {
-                text-align: center;
-            }
-            .video-medium-wrapper {
-                width: 80%;
-                margin-left: auto;
-                margin-right: auto;
-            }
+            .showcase-container { flex-direction: column; text-align: center; }
+            .showcase-text { text-align: center; }
+            .video-medium-wrapper { width: 80%; margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Botón de WhatsApp flotante con número actualizado -->
     <a href="https://wa.me/5493855800941?text=Hola!%20Me%20interesa%20comprar%20un%20Kit%20de%20String%20Art" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -353,8 +119,10 @@
     <header>
         <a href="#" class="logo">MHELION<span>ART</span></a>
         <nav>
-            <a href="#app" style="text-decoration:none; color:var(--dark); margin-right:20px; font-weight:bold;">App</a>
-            <a href="#kit" style="text-decoration:none; color:var(--dark); font-weight:bold;">Kits</a>
+            <!-- App redirige a Google Play -->
+            <a href="https://play.google.com/store/apps/details?id=com.mhelionart.app" target="_blank" rel="noopener noreferrer" style="color:var(--dark); margin-right:20px;">App</a>
+            <!-- Kit sigue siendo ancla a la sección de productos -->
+            <a href="#kit" style="color:var(--dark);">Kits</a>
         </nav>
     </header>
 
@@ -380,7 +148,6 @@
                     allowfullscreen>
                 </iframe>
             </div>
-            <!-- Se eliminó el texto "✨ Mira cómo nace el arte con hilos ✨" para mejor visualización en móviles -->
         </div>
     </section>
 
@@ -405,7 +172,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CENTRAL: VIDEO "MUJER CON PERLAS" CON NOTA DE PLANTILLA -->
     <div class="showcase-section">
         <div class="showcase-container">
             <div class="showcase-video">
@@ -438,9 +204,9 @@
                 <h2 style="margin: 15px 0 10px 0;">Kit Premium String Art</h2>
                 <p>Incluye todo lo necesario para que no tengas que buscar nada por separado. Compatible 100% con la app Mhelion Art.</p>
                 <ul style="list-style: none; padding: 0; margin: 25px 0;">
-                    <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> bestidor de alta precisión.</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> Clavos de acero.</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> Hilo artístico de alta tipo ceda.</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> Tablero de madera curada y perforada (alta precisión).</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> Clavos de acero de alta precisión + martillo de emergencia.</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> Hilo artístico de alta resistencia (varios colores incluidos).</li>
                     <li><i class="fas fa-check-circle" style="color:var(--accent); width: 24px;"></i> Guía exclusiva para usar con la app + patrones de regalo.</li>
                 </ul>
                 <a href="https://wa.me/5493855800941?text=Hola!%20Deseo%20comprar%20el%20Kit%20Premium%20de%20String%20Art" class="btn btn-kit" style="margin-left:0; padding: 18px 40px; display: inline-block; font-size: 1.1rem;">
@@ -482,7 +248,7 @@
     </footer>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === "#" || targetId === "") return;
